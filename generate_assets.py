@@ -1,0 +1,98 @@
+
+import wave
+import math
+import struct
+import random
+import os
+
+def create_dir(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+
+# Parameters
+SAMPLE_RATE = 44100
+
+def generate_tone(frequency, duration, volume=0.5):
+    n_samples = int(SAMPLE_RATE * duration)
+    data = []
+    for i in range(n_samples):
+        # Sine wave
+        value = math.sin(2 * math.pi * frequency * i / SAMPLE_RATE)
+        # Add basic decay for some sounds
+        amp = volume * 32767
+        data.append(int(value * amp))
+    return data
+
+def generate_noise(duration, volume=0.5):
+    n_samples = int(SAMPLE_RATE * duration)
+    data = []
+    for i in range(n_samples):
+        value = random.uniform(-1, 1)
+        amp = volume * 32767 * (1 - (i/n_samples)) # Decay
+        data.append(int(value * amp))
+    return data
+
+def generate_music_loop(duration=10):
+    # Simple Arpeggio C Major: C, E, G
+    notes = [261.63, 329.63, 392.00, 523.25] # C4, E4, G4, C5
+    tempo = 0.2
+    data = []
+    
+    total_samples = int(SAMPLE_RATE * duration)
+    current_sample = 0
+    
+    while current_sample < total_samples:
+        for note in notes:
+            # Generate shorter notes
+            n_samples = int(SAMPLE_RATE * tempo)
+            for i in range(n_samples):
+                t = i / SAMPLE_RATE
+                # Sawtooth-ish wave for retro feel
+                value = (2 * (t * note - math.floor(0.5 + t * note))) 
+                amp = 0.2 * 32767
+                data.append(int(value * amp))
+            current_sample += n_samples
+            if current_sample >= total_samples: break
+            
+    return data[:total_samples]
+
+def save_wav(filename, data):
+    with wave.open(filename, 'w') as f:
+        f.setnchannels(1) # Mono
+        f.setsampwidth(2) # 2 bytes (16-bit)
+        f.setframerate(SAMPLE_RATE)
+        # Convert to bytes
+        packed_data = struct.pack('<' + ('h' * len(data)), *data)
+        f.writeframes(packed_data)
+    print(f"Generated {filename}")
+
+def main():
+    base_path = "d:/game/space_shooter/assets/sounds"
+    create_dir(base_path)
+
+    # 1. Shoot Sound (High pitch decay)
+    shoot_data = []
+    for i in range(int(SAMPLE_RATE * 0.15)):
+        freq = 800 - (i / (SAMPLE_RATE * 0.15)) * 600 # Drop from 800 to 200
+        val = math.sin(2 * math.pi * freq * i / SAMPLE_RATE)
+        shoot_data.append(int(val * 0.5 * 32767))
+    save_wav(f"{base_path}/shoot.wav", shoot_data)
+
+    # 2. Explosion (Noise decay)
+    exp_data = generate_noise(0.5, 0.6)
+    save_wav(f"{base_path}/explosion.wav", exp_data)
+
+    # 3. Powerup (Rising chime)
+    pup_data = []
+    for i in range(int(SAMPLE_RATE * 0.3)):
+        freq = 400 + (i / (SAMPLE_RATE * 0.3)) * 600
+        val = math.sin(2 * math.pi * freq * i / SAMPLE_RATE)
+        pup_data.append(int(val * 0.5 * 32767))
+    save_wav(f"{base_path}/powerup.wav", pup_data)
+
+    # 4. Background Music (Arpeggio Loop)
+    music_data = generate_music_loop(16.0) # 16 seconds loop
+    save_wav(f"{base_path}/bg_music.wav", music_data)
+
+if __name__ == "__main__":
+    main()
