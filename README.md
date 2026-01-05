@@ -26,7 +26,6 @@ Navigate to this directory and run:
 ```bash
 py main.py
 ```
-(Or `python main.py` if your PATH is configured correctly).
 
 ## Controls
 - **Arrow Keys / WASD**: Move ship.
