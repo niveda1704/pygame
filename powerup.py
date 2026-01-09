@@ -3,11 +3,12 @@ import pygame
 import random
 
 class PowerUp:
-    TYPES = ['double', 'shield', 'slow']
+    TYPES = ['double', 'shield', 'slow', 'health']
     
     def __init__(self, x, y):
         self.x = x
         self.y = y
+        # Adjust probabilities: Health should be slightly rarer or common depending on feel
         self.type = random.choice(self.TYPES)
         self.width = 20
         self.height = 20
@@ -25,6 +26,9 @@ class PowerUp:
         elif self.type == 'slow':
             self.color = (100, 200, 255) # Blue
             self.label = "SL"
+        elif self.type == 'health':
+            self.color = (255, 50, 50)   # Red
+            self.label = "H+"
             
     def update(self):
         self.y += self.speed

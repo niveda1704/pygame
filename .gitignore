@@ -1,3 +1,6 @@
-
 __pycache__/
 *.pyc
+save_data.json
+build/
+dist/
+*.spec

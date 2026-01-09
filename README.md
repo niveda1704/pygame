@@ -4,7 +4,7 @@
 A modern, glassmorphism-style space shooter game built with Python and Pygame.
 
 ## Requirements
-- **Python 3.12
+- **Python 3.12**
 - `pygame` library.
 
 ## Installation
@@ -31,10 +31,16 @@ py main.py
 - **Arrow Keys / WASD**: Move ship.
 - **Space**: Shoot / Start Game.
 - **R**: Restart Game (on Game Over).
-- **Esc**: Quit.
+- **S**: Open Hanger (Shop) at Menu.
+- **Shift**: Activate EMP Nova.
+- **Esc**: Quit / Back to Menu.
 
 ## Features
-- Glassmorphism UI design.
-- Boss fights every 5 levels.
-- Power-ups (Double Shot, Shield, Slow Motion).
-- Dynamic lighting and particle effects.
+- **Glassmorphism UI**: Sleek, modern design with transparency and blurs.
+- **Persistent Upgrades**: Earn credits to permanently upgrade speed, health, magnets, and more.
+- **Universal Support**: Play on Desktop or via **Web/Browser** (Pygbag ready).
+- **Cosmic Effects**: Multi-layered Parallax Stars and drifting Nebulae.
+- **Combat Feedback**: Floating damage numbers, screen shake, and "Combo" multipliers.
+- **Advanced Enemies**: Hunters (tracking), Tanks (high HP), and Vanguards (shooting).
+- **Boss Fights**: Encounter unique bosses every 5 levels.
+- **Audio Fidelity**: 8+ custom synthesized SFX, background music, and adaptive low-health alarms.

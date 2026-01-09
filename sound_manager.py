@@ -14,7 +14,12 @@ class SoundManager:
             'shoot': 'assets/sounds/shoot.wav',
             'explosion': 'assets/sounds/explosion.wav',
             'powerup': 'assets/sounds/powerup.wav',
-            'music': 'assets/sounds/bg_music.wav'
+            'music': 'assets/sounds/bg_music.wav',
+            'damage': 'assets/sounds/damage.wav',
+            'game_over': 'assets/sounds/game_over.wav',
+            'boss_enter': 'assets/sounds/boss_enter.wav',
+            'level_complete': 'assets/sounds/level_complete.wav',
+            'low_health': 'assets/sounds/low_health.wav'
         }
         
         for name, path in sound_files.items():

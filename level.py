@@ -86,6 +86,12 @@ class LevelManager:
             if r < 0.2: e_type = 'fast'
         if self.level > 3:
             if r < 0.4 and r > 0.2: e_type = 'sine'
+        if self.level > 4:
+            if r < 0.5 and r > 0.4: e_type = 'vanguard'
+        if self.level > 6:
+            if r < 0.6 and r > 0.5: e_type = 'tank'
+        if self.level > 8:
+            if r < 0.7 and r > 0.6: e_type = 'hunter'
             
         enemy = Enemy(x, -50, enemy_type=e_type)
         self.enemies.append(enemy)
