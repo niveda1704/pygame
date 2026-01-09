@@ -1,46 +1,81 @@
 
-# Space Shooter Glass
+# 🚀 Space Shooter Glass
 
-A modern, glassmorphism-style space shooter game built with Python and Pygame.
+[![Play Online](https://img.shields.io/badge/Play-Live_on_Web-brightgreen?style=for-the-badge&logo=google-chrome&logoColor=white)](https://pygame-ew8v.onrender.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/niveda1704/pygame)
 
-## Requirements
-- **Python 3.12**
-- `pygame` library.
+A state-of-the-art, **Glassmorphism-styled** arcade shooter built with Python and Pygame. Experience high-octane combat with a modern aesthetic, featuring procedural cosmic effects, vibrant UI, and deep progression systems.
 
-## Installation
+---
 
-1.  **Ensure you are using a compatible Python version.** 
-    Check with:
-    ```bash
-    python --version
-    ```
-    If you have Python 3.14, please install Python 3.12 or older.
+## 🎮 Play Now
+The game is cross-platform and fully optimized for both Desktop and Mobile browsers!
 
-2.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+### **[👉 Click Here to Play the Live Web Version](https://pygame-ew8v.onrender.com/)**
 
-## How to Run
-Navigate to this directory and run:
+---
+
+## ✨ Premium Features
+
+*   **💎 Glassmorphism UI**: High-fidelity interface with real-time transparency, blurs, and glow effects.
+*   **🌌 Dynamic Backgrounds**: Multi-layered Parallax starfields and procedurally drifting cosmic Nebulae.
+*   **🛠️ Persistent Hangar**: Collect credits from destroyed enemies to permanently upgrade your engine, fire rate, hull, and magnet range.
+*   **⚡ EMP Nova System**: A unique rechargeable secondary weapon that vaporizes surrounding threats and bullets.
+*   **👾 Advanced Enemy AI**: 
+    *   **Hunters**: Track your horizontal movement relentlessly.
+    *   **Tanks**: Massive hulls that require focused fire.
+    *   **Vanguards**: Specialized ships that fire back at you.
+*   **🎼 Retro-Synth Audio**: 8+ custom-generated SFX including low-health alarms, boss fanfares, and ambient synth loops.
+
+---
+
+## ⌨️ Controls
+
+| Action | Desktop Keyboard | Mobile / Touch |
+| :--- | :--- | :--- |
+| **Move** | `Arrows` or `WASD` | `<` and `>` Buttons |
+| **Primary Fire** | `Space` | `O` Button |
+| **EMP Nova** | `Left/Right Shift` | `!` Button |
+| **Hangar (Shop)** | `S` (at Menu) | Tap Hangar |
+| **Restart** | `R` (Game Over) | Tap Restart |
+| **Pause/Menu** | `Esc` | - |
+
+---
+
+## 🛠️ Technical Setup
+
+### **Requirements**
+- **Python 3.12+**
+- `pygame-ce` or `pygame`
+
+### **Installation**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/niveda1704/pygame.git
+   cd pygame/space_shooter
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the game:
+   ```bash
+   python main.py
+   ```
+
+---
+
+## 🚀 Deployment & Web Support
+This project uses **Pygbag** to compile Python into WebAssembly (WASM), making it compatible with any modern browser.
+
+**To test the web build locally:**
 ```bash
-py main.py
+python -m pygbag .
 ```
+Then navigate to `http://localhost:8000`.
 
-## Controls
-- **Arrow Keys / WASD**: Move ship.
-- **Space**: Shoot / Start Game.
-- **R**: Restart Game (on Game Over).
-- **S**: Open Hanger (Shop) at Menu.
-- **Shift**: Activate EMP Nova.
-- **Esc**: Quit / Back to Menu.
+---
 
-## Features
-- **Glassmorphism UI**: Sleek, modern design with transparency and blurs.
-- **Persistent Upgrades**: Earn credits to permanently upgrade speed, health, magnets, and more.
-- **Universal Support**: Play on Desktop or via **Web/Browser** (Pygbag ready).
-- **Cosmic Effects**: Multi-layered Parallax Stars and drifting Nebulae.
-- **Combat Feedback**: Floating damage numbers, screen shake, and "Combo" multipliers.
-- **Advanced Enemies**: Hunters (tracking), Tanks (high HP), and Vanguards (shooting).
-- **Boss Fights**: Encounter unique bosses every 5 levels.
-- **Audio Fidelity**: 8+ custom synthesized SFX, background music, and adaptive low-health alarms.
+## 📜 Credits & License
+Developed with ❤️ by **Niveda Sree**.
+Distributed under the MIT License. See `LICENSE` for more information.
