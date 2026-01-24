@@ -65,8 +65,6 @@ The game is cross-platform and fully optimized for both Desktop and Mobile brows
 
 ---
 
-##  Deployment & Web Support
-This project uses **Pygbag** to compile Python into WebAssembly , making it compatible with any modern browser.
 
 
 
