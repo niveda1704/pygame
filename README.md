@@ -9,7 +9,7 @@ A state-of-the-art, **Glassmorphism-styled** arcade shooter built with Python an
 ---
 
 ##  Play Now
-The game is cross-platform and fully optimized for both Desktop and Mobile browsers!
+The game is cross-platform and fully optimized for both Desktop and Mobile browsers
 
 ### **[👉 Click Here to Play the Live Web Version](https://pygame-ew8v.onrender.com/)**
 
